@@ -2,6 +2,7 @@ clc
 clear
 close all
 
+addpath("./general_function")
 %% choose dataset
 dataset=1;
 
