@@ -7,12 +7,12 @@ dataset=1;
 
 if dataset==1
     class_num=7;
-    data_feature_Training=load('TrainingImages_rgb_gabor_7_7.mat');
+    data_feature_Training=load('./extracted_feature/TrainingImages_rgb_gabor_7_7.mat');
     data_feature_Training=data_feature_Training.data_feature;
-    data_feature_Testing=load('TestingImages_rgb_gabor_7_7.mat');
+    data_feature_Testing=load('./extracted_feature/TestingImages_rgb_gabor_7_7.mat');
     data_feature_Testing=data_feature_Testing.data_feature;
-    load('Train&test_gabor_7_7.mat');
-    load('model_TrainTest.mat');
+    load('./result/Train&test_gabor_7_7.mat');
+    load('./model/model_TrainTest.mat');
     test_label_true=zeros(length(data_feature_Testing),1);
     for countvariable=1:length(data_feature_Testing)
         test_label_true(countvariable)=data_feature_Testing(countvariable).kind+1;
@@ -83,8 +83,8 @@ if dataset==1
     fprintf(['The f1 is: %.2f%%\r\n'],f1*100);
     fprintf(['The recall is: %.2f%%\r\n'],recall*100);
 elseif dataset==2
-    load('OATH_class6_gabor_8_8_result.mat');
-    load('OATH_class6_gabor_8_8.mat');
+    load('./extracted_featureOATH_class6_gabor_8_8_result.mat');
+    load('./result/OATH_class6_gabor_8_8.mat');
     class_num=6;
     for i=1:10
         numTrain=0.7;
